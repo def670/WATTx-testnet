@@ -51,6 +51,52 @@ Network Parameters
 Quick Start
 -----------
 
+lets start with dependencies - theres a list (this is for setup on UBUNTU 22.04
+
+### Dependencies
+```bash
+sudo apt update
+sudo apt install -y \
+  build-essential cmake pkg-config git python3 \
+  libboost-dev libboost-system-dev libboost-filesystem-dev \
+  libboost-program-options-dev libboost-thread-dev libboost-test-dev \
+  libevent-dev libsqlite3-dev libzmq3-dev libminiupnpc-dev libnatpmp-dev \
+  libssl-dev libgmp-dev systemtap-sdt-dev \
+  qtbase5-dev qtbase5-dev-tools qttools5-dev qttools5-dev-tools \
+  libqt5gui5 libqt5core5a libqt5dbus5 libqrencode-dev \
+  libtool autotools-dev automake bsdmainutils
+
+### Clone the repo
+```bash
+git clone https://github.com/nucash-mining/WATTx-testnet.git
+
+### Build
+```bash
+mkdir build && cd build
+cmake ..
+make -j$(nproc)
+
+# your executables will be in bin/
+
+cd bin
+ls
+
+### Binaries
+
+After building, binaries are located in `build/bin/`:
+- `wattxd` - Full node daemon
+- `wattx-cli` - Command-line interface
+- `wattx-qt` - Qt GUI wallet
+- `wattx-tx` - Transaction utility
+- `wattx-wallet` - Wallet utility
+
+### Start your qt wallet
+```bash
+./wattx-qt
+
+
+
+
 ### Running a Node
 
 ```bash
